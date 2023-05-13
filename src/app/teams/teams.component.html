@@ -1,0 +1,7 @@
+<h1>TEAMS</h1>
+<ul>
+    <li *ngFor="let team of teams">
+      <a [routerLink]="['/teams', team.id, 'players']">{{ team.full_name }}</a>
+    </li>
+  </ul>
+  

@@ -1,0 +1,17 @@
+<select [(ngModel)]="selectedTeamId[0]" (change)="onTeamChange($event, 0)">
+    <option *ngFor="let team of teams" [value]="team.id">{{ team.full_name }}</option>
+  </select>
+
+  <select [(ngModel)]="selectedPlayerId[0]"  (change)="onPlayerChange($event, 0)">
+    <option *ngFor="let player of players[0]" [value]="player[0]">{{ player[3] }}</option>
+  </select>
+
+  <select [(ngModel)]="selectedTeamId[1]" (change)="onTeamChange($event, 1)">
+    <option *ngFor="let team of teams" [value]="team.id">{{ team.full_name }}</option>
+  </select>  
+  <select [(ngModel)]="selectedPlayerId[1]"  (change)="onPlayerChange($event, 1)">
+    <option *ngFor="let player of players[1]" [value]="player[0]">{{ player[3] }}</option>
+  </select>
+  
+  <button (click)="comparePlayers()">Compare</button>
+  

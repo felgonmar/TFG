@@ -1,0 +1,17 @@
+<h1>PLAYERS OF TEAM</h1>
+
+<h2>Jugadores del equipo</h2>
+
+<table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td *ngFor="let header of headers; let i = index">{{ player[i] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
