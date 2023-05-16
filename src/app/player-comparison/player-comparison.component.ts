@@ -10,11 +10,18 @@ import { TeamsService } from '../teams.service';
   styleUrls: ['./player-comparison.component.css']
 })
 export class PlayerComparisonComponent implements OnInit {
-  playerStats: any[][] = [[], []];
+  playerStats = [{}, {}];
+  player1Stats:any;
+  player2Stats:any;
+  playersTeam1: any = [];
+  playersTeam2: any = [];
   teams: any;
   selectedTeamId: string[] = ['', ''];
-  players: any[][] = [[], []];
+  players = [[], []];
+  player1:any;
+  player2:any;
   selectedPlayerId: string[] = ['', ''];
+  playerComparison={}
 
   constructor(
     private route: ActivatedRoute,
@@ -24,20 +31,9 @@ export class PlayerComparisonComponent implements OnInit {
 
   ngOnInit(): void {
     this.teamService.getTeams().subscribe(res =>{
-      console.log(res)
+      
       this.teams = res;
     })
-    // const player1Id = this.route.snapshot.paramMap.get('player1Id');
-    // const player2Id = this.route.snapshot.paramMap.get('player2Id');
-    // if (player1Id !== null && player2Id !== null) {
-    //   this.playerService.getPlayerStats(player1Id).subscribe(stats => {
-    //     this.player1Stats = stats;
-    //   });
-
-    //   this.playerService.getPlayerStats(player2Id).subscribe(stats => {
-    //     this.player2Stats = stats;
-    //   });
-    // }
   }
 
  
@@ -47,8 +43,9 @@ export class PlayerComparisonComponent implements OnInit {
       this.selectedTeamId[index] = target.value;
   
       this.teamService.getTeamPlayers(parseInt(this.selectedTeamId[index])).subscribe(players => {
-        this.players[index] = players.players;
-        console.log(this.players)
+        if(index == 0){this.playersTeam1 = players.players_dict}else{this.playersTeam2 = players.players_dict}
+        
+        
       });
     }
   }
@@ -58,15 +55,34 @@ export class PlayerComparisonComponent implements OnInit {
     const target = event.target as HTMLSelectElement;
     if(target.value){
       this.selectedPlayerId[index] = target.value;
-  
+      this.playerService.getPlayerCommonInfo(this.selectedPlayerId[index]).subscribe(res =>{
+        if(index == 0){
+          this.player1 = res;
+          console.log(res)
+        }else{
+          this.player2=res;
+          console.log(res)
+        }
+      })
       this.playerService.getPlayerStats(this.selectedPlayerId[index]).subscribe(stats => {
-        this.playerStats[index] = stats;
-        console.log(this.playerStats)
+        if(index == 0){
+          this.player1Stats = stats
+        }else{
+          this.player2Stats = stats
+        }
       });
+
+      if(this.player1Stats && this.player2Stats){
+        this.playerService.getPlayerComparison(this.selectedPlayerId[0],this.selectedPlayerId[1]).subscribe(res =>{
+          this.playerComparison = res;
+          console.log(res)
+        })
+      }
     }
   }
   
-  comparePlayers(){
-
+  objectKeys(obj:any) {
+    return Object.keys(obj);
   }
+  
 }

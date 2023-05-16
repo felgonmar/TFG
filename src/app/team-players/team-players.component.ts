@@ -23,7 +23,6 @@ export class TeamPlayersComponent implements OnInit {
     this.teamsService.getTeamPlayers(this.teamId).subscribe(response => {
       this.players = response.players;
       this.headers = response.headers;
-      console.log(response.headers, response.players[0])
     });
   }
 }

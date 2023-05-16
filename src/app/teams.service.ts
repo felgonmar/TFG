@@ -24,4 +24,5 @@ export class TeamsService {
 export interface TeamPlayersResponse {
   players: any[];
   headers: string[];
+  players_dict: any[];
 }

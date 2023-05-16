@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -12,8 +12,20 @@ export class PlayersService {
 
    }
 
+   getPlayerCommonInfo(playerId:String){
+    return this.http.get(`${this.baseUrl}/playerCommonInfo/${playerId}/`);
+   }
 
    getPlayerStats(playerId: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/player_stats/${playerId}`);
+    return this.http.get(`${this.baseUrl}/playerStats/${playerId}/`);
+  }
+
+  getPlayerComparison(playerId: string, vsPlayerId: string, seasonId?: string) {
+    let params = new HttpParams();
+    if (seasonId) {
+      params = params.append('seasonId', seasonId);
+    }
+
+    return this.http.get(`${this.baseUrl}/playerCompare/${playerId}/${vsPlayerId}`, { params });
   }
 }
