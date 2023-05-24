@@ -9,6 +9,16 @@ import { TeamPlayersComponent } from './team-players/team-players.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PlayerComparisonComponent } from './player-comparison/player-comparison.component';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import {MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NewsComponent } from './news/news.component';
+import { GamesComponent } from './games/games.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { GamesDetailComponent } from './games-detail/games-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +26,24 @@ import { FormsModule } from '@angular/forms';
     TeamsComponent,
     TeamPlayersComponent,
     NavbarComponent,
-    PlayerComparisonComponent
+    PlayerComparisonComponent,
+    NewsComponent,
+    GamesComponent,
+    LoginComponent,
+    RegisterComponent,
+    GamesDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    FormsModule
+    FormsModule,
+    MatTableModule, 
+    MatToolbarModule,
+    MatMenuModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

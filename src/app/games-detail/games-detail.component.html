@@ -1,0 +1,9 @@
+<p>games-detail</p>
+
+<div *ngIf="boxScore">
+    <p>{{boxScore['TeamStats'][0]['TEAM_ABBREVIATION']}}</p>
+    <p>{{boxScore['TeamStats'][0]['PTS']}}</p>
+    <p>vs</p>
+    <p>{{boxScore['TeamStats'][1]['TEAM_ABBREVIATION']}}</p>
+    <p>{{boxScore['TeamStats'][1]['PTS']}}</p>
+</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+</head>
+<body>
+  <div class="container">
+    <div class="login-form">
+      <h1>Iniciar sesión</h1>
+      <form>
+        <input type="text" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit" (click)="login()">Iniciar sesión</button>
+      </form>
+      <p class="signup-link">¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
+    </div>
+  </div>
+</body>
+</html>

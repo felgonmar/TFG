@@ -1,23 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { baseUrl } from './config';
 @Injectable({
   providedIn: 'root'
 })
 
 
 export class TeamsService {
-  API_URL = 'http://localhost:8000';  
+ 
 
   constructor(private http: HttpClient) { }
 
   getTeams() {
-    return this.http.get(`${this.API_URL}/teams/`);
+    return this.http.get(`${baseUrl}/teams/`);
   }
 
   getTeamPlayers(teamId: number): Observable<TeamPlayersResponse> {
-    return this.http.get<TeamPlayersResponse>(`${this.API_URL}/teams/${teamId}/players/`);
+    return this.http.get<TeamPlayersResponse>(`${baseUrl}/teams/${teamId}/players/`);
   }
 }
 

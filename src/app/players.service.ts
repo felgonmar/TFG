@@ -1,23 +1,23 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { baseUrl } from './config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayersService {
-  private baseUrl = 'http://localhost:8000';
 
   constructor(private http: HttpClient) {
 
    }
 
    getPlayerCommonInfo(playerId:String){
-    return this.http.get(`${this.baseUrl}/playerCommonInfo/${playerId}/`);
+    return this.http.get(`${baseUrl}/playerCommonInfo/${playerId}/`);
    }
 
    getPlayerStats(playerId: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/playerStats/${playerId}/`);
+    return this.http.get(`${baseUrl}/playerStats/${playerId}/`);
   }
 
   getPlayerComparison(playerId: string, vsPlayerId: string, seasonId?: string) {
@@ -26,6 +26,6 @@ export class PlayersService {
       params = params.append('seasonId', seasonId);
     }
 
-    return this.http.get(`${this.baseUrl}/playerCompare/${playerId}/${vsPlayerId}`, { params });
+    return this.http.get(`${baseUrl}/playerCompare/${playerId}/${vsPlayerId}`, { params });
   }
 }

@@ -1,0 +1,6 @@
+<label for="game-date">Select a date:</label>
+<input type="date" id="game-date" (change)="onDateChange($event)">
+
+<div *ngFor="let game of games">
+  <a [routerLink]="['/game', game.GAME_ID]">{{ game.MATCHUP }}</a>
+</div>

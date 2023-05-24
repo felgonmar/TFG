@@ -11,7 +11,7 @@ export class TeamPlayersComponent implements OnInit {
   teamId?: number;
   players: any[] = [];
   headers: any[] = []
-
+  players_dict={}
   constructor(
     private route: ActivatedRoute,
     private teamsService: TeamsService
@@ -23,6 +23,7 @@ export class TeamPlayersComponent implements OnInit {
     this.teamsService.getTeamPlayers(this.teamId).subscribe(response => {
       this.players = response.players;
       this.headers = response.headers;
+      this.players_dict = response.players_dict;
     });
   }
 }
