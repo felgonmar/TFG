@@ -13,11 +13,11 @@ export class TeamsService {
   constructor(private http: HttpClient) { }
 
   getTeams() {
-    return this.http.get(`${baseUrl}/teams/`);
+    return this.http.get<any>(`${baseUrl}/teams/`);
   }
 
   getTeamPlayers(teamId: number): Observable<TeamPlayersResponse> {
-    return this.http.get<TeamPlayersResponse>(`${baseUrl}/teams/${teamId}/players/`);
+    return this.http.get<any>(`${baseUrl}/teams/${teamId}/players/`);
   }
 }
 

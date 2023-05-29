@@ -10,7 +10,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
   getNews(){
-    return this.http.get(`${baseUrl}/news`)
+    return this.http.get<any>(`${baseUrl}/news`)
   }
   
 }

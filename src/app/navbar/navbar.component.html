@@ -11,21 +11,44 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/player-comparison">Comparison</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/players">Players</a>
-        </li>
+        <div class="nav-item">
+          <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
+            <input formControlName="search" class="form-control mr-sm-2" type="search" placeholder="Search Players" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        
+          <div class="panel" [style.display]="showResults ? 'block' : 'none'">
+            <!-- Botón para cerrar el panel -->
+            <button (click)="closeResults()">Close</button>
+        
+            <ul *ngIf="searchResults.length > 0">
+              <li *ngFor="let result of searchResults">
+                <a class="nav-link" routerLink="/players/{{result.id}}">{{result.full_name}} - {{result.commonPlayerInfo.TEAM_ABBREVIATION}}</a>
+              </li>
+            </ul>
+          </div>
+        
+        </div>
+        
         <li class="nav-item">
           <a class="nav-link" routerLink="/news">News</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/games">Games</a>
         </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+      
+      
+        <li class="nav-item" *ngIf="user">
+          <a class="nav-link">{{ user.name }}</a>
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a class="nav-link" (click)="logout()">logout</a>
+        </li>
+        <li class="nav-item" *ngIf="!user">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
       </ul>
+      
     </div>
   </nav>
   

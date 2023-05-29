@@ -14,7 +14,7 @@ export class RatingService {
       params = params.append('type', type);
       params.append('id', id)
     }
-    return this.http.get(`${baseUrl}/ratings`, {params});
+    return this.http.get<any>(`${baseUrl}/ratings`, {params});
   }
 
   createRating(type: string, id: string, userId:String, rating:Number){

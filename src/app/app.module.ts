@@ -8,7 +8,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { TeamPlayersComponent } from './team-players/team-players.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PlayerComparisonComponent } from './player-comparison/player-comparison.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import {MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu'
@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
+import { LocalStorageService } from './local-storage.service';
+import { SeasonsComponent } from './seasons/seasons.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { GamesDetailComponent } from './games-detail/games-detail.component';
     GamesComponent,
     LoginComponent,
     RegisterComponent,
-    GamesDetailComponent
+    GamesDetailComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +45,10 @@ import { GamesDetailComponent } from './games-detail/games-detail.component';
     MatToolbarModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

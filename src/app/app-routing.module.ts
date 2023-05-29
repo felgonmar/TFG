@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { NewsComponent } from './news/news.component';
 import { RegisterComponent } from './register/register.component';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
+import { SeasonsComponent } from './seasons/seasons.component';
 const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'teams/:teamId/players', component: TeamPlayersComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'news', component: NewsComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'seasons', component: SeasonsComponent },
 ];
 
 @NgModule({

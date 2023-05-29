@@ -1,0 +1,14 @@
+.panel {
+    position: absolute;
+    z-index: 1;
+    /* Establecer el tamaño y la posición como desees */
+    width: 300px;
+    height: 200px;
+    /* Colores y estilos para que se parezca a una ventana emergente */
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    /* Asegúrate de que la ventana emergente esté oculta por defecto */
+    display: none;
+  }
+  

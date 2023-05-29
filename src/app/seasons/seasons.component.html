@@ -1,0 +1,4 @@
+<select (change)="getSeasonEvent($event)">
+    <option *ngFor="let season of seasons" [value]="season">{{season}}</option>
+  </select>
+  

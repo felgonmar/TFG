@@ -13,11 +13,11 @@ export class PlayersService {
    }
 
    getPlayerCommonInfo(playerId:String){
-    return this.http.get(`${baseUrl}/playerCommonInfo/${playerId}/`);
+    return this.http.get<any>(`${baseUrl}/playerCommonInfo/${playerId}/`);
    }
 
    getPlayerStats(playerId: string): Observable<any> {
-    return this.http.get(`${baseUrl}/playerStats/${playerId}/`);
+    return this.http.get<any>(`${baseUrl}/playerStats/${playerId}/`);
   }
 
   getPlayerComparison(playerId: string, vsPlayerId: string, seasonId?: string) {
@@ -26,6 +26,10 @@ export class PlayersService {
       params = params.append('seasonId', seasonId);
     }
 
-    return this.http.get(`${baseUrl}/playerCompare/${playerId}/${vsPlayerId}`, { params });
+    return this.http.get<any>(`${baseUrl}/playerCompare/${playerId}/${vsPlayerId}`, { params });
   }
+
+findPlayer(name:String){
+  return this.http.get<any>(`${baseUrl}//playerFinder/${name}`);
+}
 }
