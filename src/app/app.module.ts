@@ -21,7 +21,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
 import { LocalStorageService } from './local-storage.service';
 import { SeasonsComponent } from './seasons/seasons.component';
-
+import { PlayerComponent } from './player/player.component';
+import { RatingDialogComponent } from './rating-dialog/rating-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,9 @@ import { SeasonsComponent } from './seasons/seasons.component';
     LoginComponent,
     RegisterComponent,
     GamesDetailComponent,
-    SeasonsComponent
+    SeasonsComponent,
+    PlayerComponent,
+    RatingDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,10 @@ import { SeasonsComponent } from './seasons/seasons.component';
     MatMenuModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

@@ -23,11 +23,10 @@
         
             <ul *ngIf="searchResults.length > 0">
               <li *ngFor="let result of searchResults">
-                <a class="nav-link" routerLink="/players/{{result.id}}">{{result.full_name}} - {{result.commonPlayerInfo.TEAM_ABBREVIATION}}</a>
+                <a class="nav-link" routerLink="/player/{{result.id}}">{{result.full_name}} - {{result.commonPlayerInfo.TEAM_ABBREVIATION}}</a>
               </li>
             </ul>
           </div>
-        
         </div>
         
         <li class="nav-item">

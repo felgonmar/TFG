@@ -1,7 +1,15 @@
 <h1>TEAMS</h1>
-<ul>
+
+<ul *ngIf="!user">
     <li *ngFor="let team of teams">
-      <a [routerLink]="['/teams', team.id, 'players']">{{ team.full_name }}</a>
+      <a [routerLink]="['/teams', team.id, 'players']">{{ team.full_name }} </a> - all rating: {{  ratingsMap[team.id] }} 
     </li>
-  </ul>
-  
+</ul>
+<ul *ngIf="user">
+  <h1>HAY USER</h1> 
+  <li *ngFor="let team of teams">
+    <a [routerLink]="['/teams', team.id, 'players']">{{ team.full_name }} </a> - YOUR RATE: {{userRatingMap[team.id].rating}} - comment: {{userRatingMap[team.id].comment}}
+    <br>
+    <a (click)="openDialog('team', team.id)">RATE</a>
+  </li>
+</ul>  

@@ -9,6 +9,7 @@ import { NewsComponent } from './news/news.component';
 import { RegisterComponent } from './register/register.component';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { PlayerComponent } from './player/player.component';
 const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'teams/:teamId/players', component: TeamPlayersComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'seasons', component: SeasonsComponent },
+  { path: 'player/:playerId', component: PlayerComponent },
 ];
 
 @NgModule({

@@ -46,7 +46,6 @@ export class NavbarComponent {
           this.searchResults= res.players;
           this.showResults = true;
         }
-          
       )
     }
   }

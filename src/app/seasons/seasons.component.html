@@ -1,4 +1,27 @@
+<h1>SEASONS</h1>
 <select (change)="getSeasonEvent($event)">
     <option *ngFor="let season of seasons" [value]="season">{{season}}</option>
   </select>
-  
+
+<div *ngIf="allData">
+  <h2>ALL TEAMS</h2>
+  <div *ngFor="let team of allData">
+    <span>{{team.TeamCity}} {{team.TeamName}} - Record: {{team.Record}}</span>
+
+  </div>
+</div>
+<div *ngIf="west">
+  <h2>WESTERN CONFERENCE</h2>
+  <div *ngFor="let team of west">
+    <span>{{team.TeamCity}} {{team.TeamName}} - Record: {{team.Record}}</span>
+
+  </div>
+</div>
+
+<div *ngIf="east">
+  <h2>EASTERN CONFERENCE</h2>
+  <div *ngFor="let team of east">
+    <span>{{team.TeamCity}} {{team.TeamName}} - Record: {{team.Record}}</span>
+
+  </div>
+</div>

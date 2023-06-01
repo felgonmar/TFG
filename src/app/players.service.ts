@@ -29,7 +29,11 @@ export class PlayersService {
     return this.http.get<any>(`${baseUrl}/playerCompare/${playerId}/${vsPlayerId}`, { params });
   }
 
-findPlayer(name:String){
-  return this.http.get<any>(`${baseUrl}//playerFinder/${name}`);
-}
+  findPlayer(name:String){
+    return this.http.get<any>(`${baseUrl}//playerFinder/${name}`);
+  }
+
+  getAdvancedStats(playerId:String){
+    return this.http.get<any>(`${baseUrl}/playerCommonInfo/${playerId}/`);
+   }
 }
