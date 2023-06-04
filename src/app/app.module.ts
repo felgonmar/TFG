@@ -26,6 +26,9 @@ import { RatingDialogComponent } from './rating-dialog/rating-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import { MatInputModule } from '@angular/material/input';
     GamesDetailComponent,
     SeasonsComponent,
     PlayerComponent,
-    RatingDialogComponent
+    RatingDialogComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule, 
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

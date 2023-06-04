@@ -11,4 +11,6 @@
     /* Asegúrate de que la ventana emergente esté oculta por defecto */
     display: none;
   }
-  
+  .right-align {
+    margin-left: auto;
+}

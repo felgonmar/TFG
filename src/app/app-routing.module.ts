@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { PlayerComponent } from './player/player.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'teams/:teamId/players', component: TeamPlayersComponent },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'seasons', component: SeasonsComponent },
   { path: 'player/:playerId', component: PlayerComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({
