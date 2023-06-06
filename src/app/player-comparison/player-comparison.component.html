@@ -18,8 +18,11 @@
       
       <div class="col-sm-6">
         <div *ngIf="player1Stats">
-        <h1>HISTORICAL</h1>
-         <h2>{{player1['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h2>
+          <h1>{{player1['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h1>
+          <h1>This season</h1>
+          <p>PPG: {{player1['PlayerHeadlineStats'][0]['PTS']}}</p>
+          <p>APG: {{player1['PlayerHeadlineStats'][0]['AST']}}</p>
+          <p>RPB: {{player1['PlayerHeadlineStats'][0]['REB']}}</p>
 
           <p>Assists: {{player1Stats['CareerTotalsRegularSeason'][0]["AST"]}}</p> 
           <p>Blocks: {{ player1Stats['CareerTotalsRegularSeason'][0]['BLK'] }}</p>
@@ -46,8 +49,13 @@
       </div>
       <div class="col-sm-6">
         <div *ngIf="player2Stats">
-          <h1>HISTORICAL</h1>
-          <h2>{{player2['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h2>
+          <h1>{{player2['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h1>
+          <h1>This season</h1>
+          <p>PPG: {{player2['PlayerHeadlineStats'][0]['PTS']}}</p>
+          <p>APG: {{player2['PlayerHeadlineStats'][0]['AST']}}</p>
+          <p>RPB: {{player2['PlayerHeadlineStats'][0]['REB']}}</p>
+         
+          <h2>HISTORICAL</h2>
  
            <p>Assists: {{player2Stats['CareerTotalsRegularSeason'][0]["AST"]}}</p> 
            <p>Blocks: {{ player2Stats['CareerTotalsRegularSeason'][0]['BLK'] }}</p>
