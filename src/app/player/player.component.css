@@ -1,0 +1,47 @@
+.player-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto;
+}
+.player-card h2, .player-card h3 {
+    text-align: center;
+}
+.player-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+.score-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+ul li button {
+    background-color: #318ccd; /* Verde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Relleno alrededor del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cursor de mano al pasar el ratón */
+    text-align: center; /* Centrar el texto */
+    display: inline-block; /* Hacerlo un bloque en línea */
+    font-size: 16px; /* Tamaño del texto */
+    transition-duration: 0.4s; /* Duración de la transición al pasar el ratón */
+    text-decoration: none; /* Sin subrayado */
+    margin: 5px 2px; /* Margen alrededor del botón */
+}
+
+ul li button:hover {
+    background-color: white; /* Blanco */
+    color: #318ccd; /* Verde */
+}

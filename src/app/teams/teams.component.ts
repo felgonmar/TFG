@@ -84,7 +84,7 @@ export class TeamsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result)
-      this.ratingService.createRating('team',result.id.toString(),this.user.id.toString(),result.rating).subscribe(res=>{
+      this.ratingService.createRating('team',result.id.toString(),this.user.id.toString(),result.rating, result.comment).subscribe(res=>{
         console.log(res)
       })
     });

@@ -15,70 +15,81 @@
 
   <div class="container">
     <div class="row">
-      
-      <div class="col-sm-6">
-        <div *ngIf="player1Stats">
-          <h1>{{player1['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h1>
-          <h1>This season</h1>
-          <p>PPG: {{player1['PlayerHeadlineStats'][0]['PTS']}}</p>
-          <p>APG: {{player1['PlayerHeadlineStats'][0]['AST']}}</p>
-          <p>RPB: {{player1['PlayerHeadlineStats'][0]['REB']}}</p>
 
-          <p>Assists: {{player1Stats['CareerTotalsRegularSeason'][0]["AST"]}}</p> 
-          <p>Blocks: {{ player1Stats['CareerTotalsRegularSeason'][0]['BLK'] }}</p>
-          <p>Defensive Rebounds: {{ player1Stats['CareerTotalsRegularSeason'][0]['DREB']}}</p>
-          <p>3-Point Field Goals Attempted: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG3A']}}</p>
-          <p>3-Point Field Goals Made: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG3M']}}</p>
-          <p>3-Point Field Goal Percentage: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG3_PCT']}}</p>
-          <p>Field Goals Attempted: {{ player1Stats['CareerTotalsRegularSeason'][0]['FGA']}}</p>
-          <p>Field Goals Made: {{ player1Stats['CareerTotalsRegularSeason'][0]['FGM']}}</p>
-          <p>Field Goal Percentage: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG_PCT']}}</p>
-          <p>Free Throws Attempted: {{ player1Stats['CareerTotalsRegularSeason'][0]['FTA']}}</p>
-          <p>Free Throws Made: {{ player1Stats['CareerTotalsRegularSeason'][0]['FTM']}}</p>
-          <p>Free Throw Percentage: {{ player1Stats['CareerTotalsRegularSeason'][0]['FT_PCT']}}</p>
-          <p>Games Played: {{ player1Stats['CareerTotalsRegularSeason'][0]['GP']}}</p>
-          <p>Games Started: {{ player1Stats['CareerTotalsRegularSeason'][0]['GS']}}</p>
-          <p>Minutes: {{ player1Stats['CareerTotalsRegularSeason'][0]['MIN']}}</p>
-          <p>Offensive Rebounds: {{ player1Stats['CareerTotalsRegularSeason'][0]['OREB']}}</p>
-          <p>Personal Fouls: {{ player1Stats['CareerTotalsRegularSeason'][0]['PF']}}</p>
-          <p>Points: {{ player1Stats['CareerTotalsRegularSeason'][0]['PTS']}}</p>
-          <p>Rebounds: {{ player1Stats['CareerTotalsRegularSeason'][0]['REB']}}</p>
-          <p>Steals: {{ player1Stats['CareerTotalsRegularSeason'][0]['STL']}}</p>
-          <p>Turnovers: {{ player1Stats['CareerTotalsRegularSeason'][0]['TOV']}}</p>
+        <div class="col-sm-6">
+            <div *ngIf="player1Stats" class="card mt-3">
+                <div class="card-header">
+                    <h2>{{player1['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h2>
+                </div>
+                <div class="card-body">
+                    <h4>This season</h4>
+                    <p>PPG: {{player1['PlayerHeadlineStats'][0]['PTS']}}</p>
+                    <p>APG: {{player1['PlayerHeadlineStats'][0]['AST']}}</p>
+                    <p>RPB: {{player1['PlayerHeadlineStats'][0]['REB']}}</p>
+                    <h4>HISTORICAL</h4>
+            <p>Assists: {{player1Stats['CareerTotalsRegularSeason'][0]["AST"]}}</p> 
+            <p>Blocks: {{ player1Stats['CareerTotalsRegularSeason'][0]['BLK'] }}</p>
+            <p>Defensive Rebounds: {{ player1Stats['CareerTotalsRegularSeason'][0]['DREB']}}</p>
+            <p>3-Point Field Goals Attempted: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG3A']}}</p>
+            <p>3-Point Field Goals Made: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG3M']}}</p>
+            <p>3-Point Field Goal Percentage: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG3_PCT']}}</p>
+            <p>Field Goals Attempted: {{ player1Stats['CareerTotalsRegularSeason'][0]['FGA']}}</p>
+            <p>Field Goals Made: {{ player1Stats['CareerTotalsRegularSeason'][0]['FGM']}}</p>
+            <p>Field Goal Percentage: {{ player1Stats['CareerTotalsRegularSeason'][0]['FG_PCT']}}</p>
+            <p>Free Throws Attempted: {{ player1Stats['CareerTotalsRegularSeason'][0]['FTA']}}</p>
+            <p>Free Throws Made: {{ player1Stats['CareerTotalsRegularSeason'][0]['FTM']}}</p>
+            <p>Free Throw Percentage: {{ player1Stats['CareerTotalsRegularSeason'][0]['FT_PCT']}}</p>
+            <p>Games Played: {{ player1Stats['CareerTotalsRegularSeason'][0]['GP']}}</p>
+            <p>Games Started: {{ player1Stats['CareerTotalsRegularSeason'][0]['GS']}}</p>
+            <p>Minutes: {{ player1Stats['CareerTotalsRegularSeason'][0]['MIN']}}</p>
+            <p>Offensive Rebounds: {{ player1Stats['CareerTotalsRegularSeason'][0]['OREB']}}</p>
+            <p>Personal Fouls: {{ player1Stats['CareerTotalsRegularSeason'][0]['PF']}}</p>
+            <p>Points: {{ player1Stats['CareerTotalsRegularSeason'][0]['PTS']}}</p>
+            <p>Rebounds: {{ player1Stats['CareerTotalsRegularSeason'][0]['REB']}}</p>
+            <p>Steals: {{ player1Stats['CareerTotalsRegularSeason'][0]['STL']}}</p>
+            <p>Turnovers: {{ player1Stats['CareerTotalsRegularSeason'][0]['TOV']}}</p>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-6">
-        <div *ngIf="player2Stats">
-          <h1>{{player2['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h1>
-          <h1>This season</h1>
-          <p>PPG: {{player2['PlayerHeadlineStats'][0]['PTS']}}</p>
-          <p>APG: {{player2['PlayerHeadlineStats'][0]['AST']}}</p>
-          <p>RPB: {{player2['PlayerHeadlineStats'][0]['REB']}}</p>
+    </div>
+    <div class="col-sm-6">
+      <div *ngIf="player2Stats" class="card mt-3">
+          <div class="card-header">
+              <h2>{{player2['CommonPlayerInfo'][0]['DISPLAY_FIRST_LAST']}}</h2>
+          </div>
+          <div class="card-body">
+              <h4>This season</h4>
+              <p>PPG: {{player2['PlayerHeadlineStats'][0]['PTS']}}</p>
+              <p>APG: {{player2['PlayerHeadlineStats'][0]['AST']}}</p>
+              <p>RPB: {{player2['PlayerHeadlineStats'][0]['REB']}}</p>
          
-          <h2>HISTORICAL</h2>
- 
-           <p>Assists: {{player2Stats['CareerTotalsRegularSeason'][0]["AST"]}}</p> 
-           <p>Blocks: {{ player2Stats['CareerTotalsRegularSeason'][0]['BLK'] }}</p>
-           <p>Defensive Rebounds: {{ player2Stats['CareerTotalsRegularSeason'][0]['DREB']}}</p>
-           <p>3-Point Field Goals Attempted: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG3A']}}</p>
-           <p>3-Point Field Goals Made: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG3M']}}</p>
-           <p>3-Point Field Goal Percentage: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG3_PCT']}}</p>
-           <p>Field Goals Attempted: {{ player2Stats['CareerTotalsRegularSeason'][0]['FGA']}}</p>
-           <p>Field Goals Made: {{ player2Stats['CareerTotalsRegularSeason'][0]['FGM']}}</p>
-           <p>Field Goal Percentage: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG_PCT']}}</p>
-           <p>Free Throws Attempted: {{ player2Stats['CareerTotalsRegularSeason'][0]['FTA']}}</p>
-           <p>Free Throws Made: {{ player2Stats['CareerTotalsRegularSeason'][0]['FTM']}}</p>
-           <p>Free Throw Percentage: {{ player2Stats['CareerTotalsRegularSeason'][0]['FT_PCT']}}</p>
-           <p>Games Played: {{ player2Stats['CareerTotalsRegularSeason'][0]['GP']}}</p>
-           <p>Games Started: {{ player2Stats['CareerTotalsRegularSeason'][0]['GS']}}</p>
-           <p>Minutes: {{ player2Stats['CareerTotalsRegularSeason'][0]['MIN']}}</p>
-           <p>Offensive Rebounds: {{ player2Stats['CareerTotalsRegularSeason'][0]['OREB']}}</p>
-           <p>Personal Fouls: {{ player2Stats['CareerTotalsRegularSeason'][0]['PF']}}</p>
-           <p>Points: {{ player2Stats['CareerTotalsRegularSeason'][0]['PTS']}}</p>
-           <p>Rebounds: {{ player2Stats['CareerTotalsRegularSeason'][0]['REB']}}</p>
-           <p>Steals: {{ player2Stats['CareerTotalsRegularSeason'][0]['STL']}}</p>
-           <p>Turnovers: {{ player2Stats['CareerTotalsRegularSeason'][0]['TOV']}}</p>
+            <h4>HISTORICAL</h4>
+  
+            <p>Assists: {{player2Stats['CareerTotalsRegularSeason'][0]["AST"]}}</p> 
+            <p>Blocks: {{ player2Stats['CareerTotalsRegularSeason'][0]['BLK'] }}</p>
+            <p>Defensive Rebounds: {{ player2Stats['CareerTotalsRegularSeason'][0]['DREB']}}</p>
+            <p>3-Point Field Goals Attempted: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG3A']}}</p>
+            <p>3-Point Field Goals Made: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG3M']}}</p>
+            <p>3-Point Field Goal Percentage: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG3_PCT']}}</p>
+            <p>Field Goals Attempted: {{ player2Stats['CareerTotalsRegularSeason'][0]['FGA']}}</p>
+            <p>Field Goals Made: {{ player2Stats['CareerTotalsRegularSeason'][0]['FGM']}}</p>
+            <p>Field Goal Percentage: {{ player2Stats['CareerTotalsRegularSeason'][0]['FG_PCT']}}</p>
+            <p>Free Throws Attempted: {{ player2Stats['CareerTotalsRegularSeason'][0]['FTA']}}</p>
+            <p>Free Throws Made: {{ player2Stats['CareerTotalsRegularSeason'][0]['FTM']}}</p>
+            <p>Free Throw Percentage: {{ player2Stats['CareerTotalsRegularSeason'][0]['FT_PCT']}}</p>
+            <p>Games Played: {{ player2Stats['CareerTotalsRegularSeason'][0]['GP']}}</p>
+            <p>Games Started: {{ player2Stats['CareerTotalsRegularSeason'][0]['GS']}}</p>
+            <p>Minutes: {{ player2Stats['CareerTotalsRegularSeason'][0]['MIN']}}</p>
+            <p>Offensive Rebounds: {{ player2Stats['CareerTotalsRegularSeason'][0]['OREB']}}</p>
+            <p>Personal Fouls: {{ player2Stats['CareerTotalsRegularSeason'][0]['PF']}}</p>
+            <p>Points: {{ player2Stats['CareerTotalsRegularSeason'][0]['PTS']}}</p>
+            <p>Rebounds: {{ player2Stats['CareerTotalsRegularSeason'][0]['REB']}}</p>
+            <p>Steals: {{ player2Stats['CareerTotalsRegularSeason'][0]['STL']}}</p>
+            <p>Turnovers: {{ player2Stats['CareerTotalsRegularSeason'][0]['TOV']}}</p>
       </div>
     </div>
+    </div>
+    <div class="col-12 mt-5">
+      <canvas id="myChart"></canvas>
+  </div>
   </div>
   

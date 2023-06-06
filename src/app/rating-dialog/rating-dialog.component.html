@@ -2,7 +2,7 @@
 <div mat-dialog-content>
   <mat-form-field>
     <mat-label>Rating</mat-label>
-    <input matInput [(ngModel)]="data.rating">
+    <input matInput [(ngModel)]="data.rating" type="number" min="1" max="10">
   </mat-form-field>
   <mat-form-field>
     <mat-label>Comment</mat-label>

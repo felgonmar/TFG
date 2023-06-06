@@ -14,7 +14,6 @@ export class LoginComponent {
   constructor(public userService:UserService, private snackBar: MatSnackBar, private router: Router, private localStorageService: LocalStorageService){}
 
   login(): void {
-    console.log('entra')
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const passwordInput = document.getElementById("password") as HTMLInputElement;
     this.snackBar.open('vamono', 'Cerrar', {duration: 3000})

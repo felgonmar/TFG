@@ -45,19 +45,14 @@ export class UserService {
     'password':password,
     'name':name,
     'last_name': lastName}
-  this.http.post<any>(`${baseUrl}/register/`, body).subscribe(res=>{
-    if(res.user){
-      this.localStorageService.set('user', res.user);
-      return {'response': res.Response,
-      'user': res.user
-      }
-    }else{
-      return {'error': res.error}
-
-      }
-  },error=>{
-    return {'error': error}
-  })
+    return this.http.post<any>(`${baseUrl}/register/`, body).pipe(
+      tap(res => {
+        if(res.user) {
+          this.localStorageService.set('user', res.user);
+          this.userSubject.next(res.user);
+        }
+      })
+    );
 
   }
 

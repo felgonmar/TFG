@@ -34,6 +34,6 @@ export class PlayersService {
   }
 
   getAdvancedStats(playerId:String){
-    return this.http.get<any>(`${baseUrl}/playerCommonInfo/${playerId}/`);
+    return this.http.get<any>(`${baseUrl}/playerAdvancedStats/${playerId}`);
    }
 }

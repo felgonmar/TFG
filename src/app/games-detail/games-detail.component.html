@@ -1,9 +1,102 @@
-<p>games-detail</p>
+<head>
+    <title>Game Detail</title>
+</head>
+<body>
+    <h1>Game Detail</h1>
 
-<div *ngIf="boxScore">
-    <p>{{boxScore['TeamStats'][0]['TEAM_ABBREVIATION']}}</p>
-    <p>{{boxScore['TeamStats'][0]['PTS']}}</p>
-    <p>vs</p>
-    <p>{{boxScore['TeamStats'][1]['TEAM_ABBREVIATION']}}</p>
-    <p>{{boxScore['TeamStats'][1]['PTS']}}</p>
-</div>
+    <div class="score-board">
+        <div>
+            <h2>{{ boxScore['TeamStats'][0]['TEAM_ABBREVIATION'] }}</h2>
+            <p>{{ boxScore['TeamStats'][0]['PTS'] }}</p>
+        </div>
+        <div>VS</div>
+        <div>
+            <h2>{{ boxScore['TeamStats'][1]['TEAM_ABBREVIATION'] }}</h2>
+            <p>{{ boxScore['TeamStats'][1]['PTS'] }}</p>
+        </div>
+    </div>
+    <div class="rating-section">
+        <div>
+            <button class="score-button" (click)="openDialog('game',gameId)">Rate Game</button>
+        </div>
+        <div>
+            <h2>Total Rating</h2>
+            <p>{{ totalRating }}</p>
+        </div>
+        <div>
+            <h2>Your Rating</h2>
+            <p>{{ userRating.rating }}</p>
+        </div>
+        <div>
+            <h2>Your Comment</h2>
+            <p>{{ userRating.comment }}</p>
+        </div>
+    </div>
+    <h2>Player Stats</h2>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Player Name</th>
+            <th>Points</th>
+            <th>Rebounds</th>
+            <th>Assists</th>
+            
+        </tr>
+        <tr *ngFor="let player of boxScore.PlayerStats">
+            <td>{{ player.TEAM_ABBREVIATION}}</td>
+            <td>{{ player.PLAYER_NAME }}</td>
+            <td>{{ player.PTS }}</td>
+            <td>{{ player.REB }}</td>
+            <td>{{ player.AST }}</td>
+        </tr>
+    </table>
+
+    <h2>Team Stats</h2>
+    <table *ngIf="boxScore">
+        <tr>
+            <th>Team</th>
+            <th>Points</th>
+            <th>Rebounds</th>
+            <th>Assists</th>
+        </tr>
+        <tr *ngFor="let team of boxScore.TeamStats">
+            <td>{{ team.TEAM_CITY }} {{ team.TEAM_ABBREVIATION }}</td>
+            <td>{{ team.PTS }}</td>
+            <td>{{ team.REB }}</td>
+            <td>{{ team.AST }}</td>
+        </tr>
+    </table>
+
+    <h2>Play by Play</h2>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Period</th>
+            <th>Score</th>
+            <th>Description</th>
+        </tr>
+        <tr *ngFor="let play of playByPlay.PlayByPlay">
+            <td>{{ play.PCTIMESTRING }}</td>
+            <td>{{ play.PERIOD }}</td>
+            <td>{{play.SCORE}}</td>
+            <div *ngIf="play.NEUTRALDESCRIPTION"> 
+                <td>{{ play.NEUTRALDESCRIPTION }}</td>
+            </div>
+            <div *ngIf="play.HOMEDESCRIPTION">
+                <td>{{play.PLAYER1_TEAM_ABBREVIATION}}: {{play.HOMEDESCRIPTION}}</td>
+            </div>
+            <div *ngIf="play.VISITORDESCRIPTION">
+                <td>{{play.PLAYER1_TEAM_ABBREVIATION}}: {{play.VISITORDESCRIPTION}}</td>
+            </div>
+              
+                <!-- <td *ngIf="play.NEUTRALDESCRIPTION">{{ play.NEUTRALDESCRIPTION }}</td>
+            
+           
+                <td *ngIf="play.HOMEDESCRIPTION">{{play.PLAYER1_TEAM_ABBREVIATION}}: {{play.HOMEDESCRIPTION}}</td>
+           
+            
+                <td *ngIf="play.VISITORDESCRIPTION">{{play.PLAYER1_TEAM_ABBREVIATION}}: {{play.VISITORDESCRIPTION}}</td> -->
+           
+        </tr>
+    </table>
+</body>

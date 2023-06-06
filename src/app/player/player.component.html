@@ -1,3 +1,38 @@
-<div *ngIf="commonInfo">
-<h1>{{commonInfo.DISPLAY_FIRST_LAST}}</h1>
+<div *ngIf="commonInfo" class="player-card">
+    <h2>{{ commonInfo.DISPLAY_FIRST_LAST }}</h2>
+    <h3>{{ commonInfo.TEAM_CITY }} {{ commonInfo.TEAM_NAME }}</h3>
+    <ul *ngIf="stats && currentSeason">
+        <li>Position: {{ commonInfo.POSITION }}</li>
+        <li>Total Points: {{ stats.CareerTotalsRegularSeason[0].PTS }}</li>
+        <li>Total Rebounds: {{ stats.CareerTotalsRegularSeason[0].REB }}</li>
+        <li>Total Assists: {{ stats.CareerTotalsRegularSeason[0].AST }}</li>
+        <li>Points This Season: {{ currentSeason.PTS }}</li>
+        <li>Rebounds This Season: {{ currentSeason.REB }}</li>
+        <li>Assists This Season: {{ currentSeason.AST }}</li>
+        <li><button (click)="getAdvancedData()" [disabled]="loaded">Load Advanced Data (This might take a while)</button></li>
+        <div *ngIf="advancedData">
+            <li>PER (Player Efficiency Rating): {{advancedData.PER}}</li>
+            <li>Offensive Rating: {{advancedData.OFF_RAT}}</li>
+            <li>Defensive Rating: {{advancedData.DEFF_RAT}}</li>
+            <li>Net Rating: {{advancedData.NET_RAT}}</li>
+            <li>EFG (effective Field Goal percentage): {{advancedData.EFG}}</li>
+            <li>TS (True Shooting Percentage): {{advancedData.TS}}</li>
+            <li>WS(Win Share): {{advancedData.WS}}</li>
+        </div>
+    </ul>
+    <div *ngIf="user">
+    <button class="score-button" (click)="openDialog('player',playerId)">Rate player</button>
+    </div>
+
+<div class="score-info">
+    <p >Total rating: {{ totalRating }}</p>
+    <div *ngIf="user">
+    <p>Your rating: {{ userRating.rating }}</p>
+    </div>
+</div>
+
+<div *ngIf="user" class="comment-info">
+    <p>Your comment:</p>
+    <p>{{ userRating.comment }}</p>
+</div>
 </div>
