@@ -16,18 +16,18 @@
         </div>
     </div>
     <div class="rating-section">
-        <div>
+        <div *ngIf="user">
             <button class="score-button" (click)="openDialog('game',gameId)">Rate Game</button>
         </div>
         <div>
             <h2>Total Rating</h2>
             <p>{{ totalRating }}</p>
         </div>
-        <div>
+        <div *ngIf="user">
             <h2>Your Rating</h2>
             <p>{{ userRating.rating }}</p>
         </div>
-        <div>
+        <div *ngIf="user">
             <h2>Your Comment</h2>
             <p>{{ userRating.comment }}</p>
         </div>

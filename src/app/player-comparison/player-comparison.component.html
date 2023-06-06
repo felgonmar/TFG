@@ -88,8 +88,13 @@
       </div>
     </div>
     </div>
-    <div class="col-12 mt-5">
-      <canvas id="myChart"></canvas>
-  </div>
+    <div style="display: block">
+      <canvas baseChart
+              [data]="radarChartData"
+              [labels]="radarChartLabels"
+              [options]="radarChartOptions"
+              [type]="radarChartType">
+      </canvas>
+    </div>
   </div>
   

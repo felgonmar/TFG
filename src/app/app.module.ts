@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule, 
     MatIconModule,
-    MatButtonModule
+    MatButtonModule, 
+    NgChartsModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]
