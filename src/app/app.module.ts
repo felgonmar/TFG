@@ -30,6 +30,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { NgChartsModule } from 'ng2-charts';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,10 @@ import { NgChartsModule } from 'ng2-charts';
     MatInputModule, 
     MatIconModule,
     MatButtonModule, 
-    NgChartsModule
+    NgChartsModule,
+    MatCardModule,
+    MatListModule,
+    MatGridListModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

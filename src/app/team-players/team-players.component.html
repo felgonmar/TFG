@@ -1,20 +1,96 @@
-<h1>PLAYERS OF TEAM</h1>
+<h1>Team Details</h1>
+<mat-card>
+  <mat-card-title>Players</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="350px">
+      <mat-grid-tile *ngFor="let player of players">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><a [routerLink]="['/player', player.PLAYER_ID]">{{ player.PLAYER }}</a></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Position: {{ player.POSITION }}</p>
+            <p>Height: {{ player.HEIGHT }}</p>
+            <p>Weight: {{ player.WEIGHT }}</p>
+            <!-- Add more fields as necessary -->
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Coaches</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="350px">
+      <mat-grid-tile *ngFor="let coach of coaches">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{coach.COACH_NAME }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p matLine>Position: {{ coach.COACH_TYPE }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
 
-<h2>Jugadores del equipo</h2>
-
-
-  <table mat-table [dataSource]="players" class="mat-elevation-z8">
-
-    <!-- Define columns -->
-    <ng-container *ngFor="let header of headers;; let i = index" [matColumnDef]="header">
-      <th mat-header-cell *matHeaderCellDef> {{header}} </th>
-      <td mat-cell *matCellDef="let player"> {{player[i]}} </td>
-    </ng-container>
-  
-    <!-- Define the header row -->
-    <tr mat-header-row *matHeaderRowDef="headers"></tr>
-  
-    <!-- Define a row for each player -->
-    <tr mat-row *matRowDef="let row; columns: headers;"></tr>
-    
-  </table>
+<mat-card *ngIf="historicalLeaders">
+  <mat-card-title>Historical Leaders</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="350px">
+      <mat-grid-tile>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Points: {{ historicalLeaders.PTS_PLAYER }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p matLine>{{ historicalLeaders.PTS }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+              <mat-card-title>Assists: {{ historicalLeaders.AST_PLAYER }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p matLine>{{ historicalLeaders.AST}}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Rebounds: {{ historicalLeaders.REB_PLAYER }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p matLine>{{ historicalLeaders.REB }}</p>
+        </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Blocks: {{ historicalLeaders.BLK_PLAYER }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p matLine>{{ historicalLeaders.BLK }}</p>
+        </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Steals: {{ historicalLeaders.STL_PLAYER }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p matLine>{{ historicalLeaders.STL }}</p>
+        </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

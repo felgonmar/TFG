@@ -16,13 +16,11 @@ export class TeamsService {
     return this.http.get<any>(`${baseUrl}/teams/`);
   }
 
-  getTeamPlayers(teamId: number): Observable<TeamPlayersResponse> {
+  getTeamPlayers(teamId: number){
     return this.http.get<any>(`${baseUrl}/teams/${teamId}/players/`);
   }
-}
 
-export interface TeamPlayersResponse {
-  players: any[];
-  headers: string[];
-  players_dict: any[];
+  getHistoricalLeaders(teamId:number){
+    return this.http.get<any>(`${baseUrl}/historicalLeaders/${teamId}/`);
+  }
 }

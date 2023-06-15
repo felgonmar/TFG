@@ -10,8 +10,8 @@ import { TeamsService } from '../teams.service';
 export class TeamPlayersComponent implements OnInit {
   teamId?: number;
   players: any[] = [];
-  headers: any[] = []
-  players_dict={}
+  coaches: any[] = []
+  historicalLeaders:any;
   constructor(
     private route: ActivatedRoute,
     private teamsService: TeamsService
@@ -21,9 +21,12 @@ export class TeamPlayersComponent implements OnInit {
     console.log(this.route.snapshot.paramMap)
     this.teamId = Number(this.route.snapshot.paramMap.get('teamId'));
     this.teamsService.getTeamPlayers(this.teamId).subscribe(response => {
-      this.players = response.players;
-      this.headers = response.headers;
-      this.players_dict = response.players_dict;
+      this.players = response.CommonTeamRoster;
+      console.log(this.players)
+      this.coaches = response.Coaches;
     });
+    this.teamsService.getHistoricalLeaders(this.teamId).subscribe(res=>{
+      this.historicalLeaders = res.CareerLeadersByTeam[0];
+    })
   }
 }
