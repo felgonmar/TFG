@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
 import { RatingService } from '../rating.service';
@@ -39,6 +39,10 @@ export class PlayerComponent implements OnInit {
         this.getUserRate()
       }
     }
+  }
+
+  ngOnChanges(changes: SimpleChange){
+    console.log(changes)
   }
 
   getCommonStats(){

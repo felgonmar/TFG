@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #50b894;
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header h1 {
+    float: left;
+    font-size: 42px;
+    line-height: 70px;
+}
+
+.welcome-text {
+    text-align: center;
+    padding: 50px;
+    font-size: 24px;
+}
+
+.welcome-text a {
+    color: #e8491d;
+    text-decoration: none;
+    font-weight: bold;
+}

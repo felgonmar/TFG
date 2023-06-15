@@ -11,6 +11,7 @@ import { GamesDetailComponent } from './games-detail/games-detail.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { PlayerComponent } from './player/player.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'teams/:teamId/players', component: TeamPlayersComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'seasons', component: SeasonsComponent },
   { path: 'player/:playerId', component: PlayerComponent },
   { path: 'not-found', component: NotFoundComponent },
+  {path: '', component: HomeComponent},
   { path: '**', redirectTo: '/not-found' },
 ];
 
