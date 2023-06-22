@@ -34,8 +34,8 @@ export class PlayerComparisonComponent implements OnInit {
   public radarChartLabels: string[] = ['PPG', 'APG', 'RPG','PIE'];
   
   public radarChartData: ChartData = {'datasets':[
-    { data: [1,2,3,56,3,4,5], label: 'Player1' },
-    { data: [2,45,6,3,5,7], label: 'player2' },
+    { data: [0,0,0,0], label: 'Player1' },
+    { data: [0,0,0,0], label: 'player2' },
     
   ],'labels':this.radarChartLabels};
   public radarChartType: ChartType = 'radar';
@@ -61,7 +61,8 @@ export class PlayerComparisonComponent implements OnInit {
       this.selectedTeamId[index] = target.value;
   
       this.teamService.getTeamPlayers(parseInt(this.selectedTeamId[index])).subscribe(players => {
-        if(index == 0){this.playersTeam1 = players.players_dict}else{this.playersTeam2 = players.players_dict}
+        console.log(players)
+        if(index == 0){this.playersTeam1 = players.CommonTeamRoster}else{this.playersTeam2 = players.CommonTeamRoster}
         
         
       });
@@ -170,7 +171,6 @@ export class PlayerComparisonComponent implements OnInit {
   
     this.radarChartData = updatedData
   
-    console.log(this.radarChartData)
   }
   
   

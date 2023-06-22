@@ -2,7 +2,7 @@
 <ul *ngIf="news">
     <li *ngFor="let new of news['news']">
       <a [href]='new.URL'>{{ new.Title }}</a>
-      <span>{{new.Description}}</span>
+      <span> - {{new.Description}}</span>
     </li>
   </ul>
 <span *ngIf="!news"> News are loading, this might take a while</span>
