@@ -1,67 +1,55 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/">NBA App</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/teams">Teams</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/seasons">Seasons</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/player-comparison">Comparison</a>
-        </li>
-        <div class="nav-item">
-          <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
-            <div class="input-group">
-              <input formControlName="search" class="form-control" type="search" placeholder="Search Players" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="submit">Search</button>
-              </div>
+  <a class="navbar-brand" routerLink="/">NBA App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/teams">Teams</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/seasons">Seasons</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/player-comparison">Comparison</a>
+      </li>
+      <div class="nav-item">
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
+          <div class="input-group">
+            <input formControlName="search" class="form-control" type="search" placeholder="Search Players" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="submit">Search</button>
             </div>
-          </form>
-                
-        
-          <div class="panel" [style.display]="showResults ? 'block' : 'none'">
-            <button (click)="closeResults()">Close</button>
-        
-            <ul *ngIf="searchResults.length > 0">
-              <li *ngFor="let result of searchResults">
-                <a class="nav-link" routerLink="/player/{{result.id}}">{{result.full_name}} - {{result.commonPlayerInfo.TEAM_ABBREVIATION}}</a>
-              </li>
-            </ul>
-
           </div>
+        </form>
+        <div class="panel" [style.display]="showResults ? 'block' : 'none'">
+          <button (click)="closeResults()">Close</button>
+          <ul *ngIf="searchResults.length > 0">
+            <li *ngFor="let result of searchResults">
+              <a class="nav-link" routerLink="/player/{{result.id}}">{{result.full_name}} - {{result.commonPlayerInfo.TEAM_ABBREVIATION}}</a>
+            </li>
+          </ul>
         </div>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/games">Games</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/news">News</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav right-align">
-        <!-- <li class="nav-item" *ngIf="user">
-          <button mat-button [matMenuTriggerFor]="menu">
-            <mat-icon>account_circle</mat-icon> {{ user.name }}
-          </button>
-          <mat-menu #menu="matMenu">
-              <button mat-menu-item (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-          </mat-menu>
-        </li> -->
-        <li class="nav-item" *ngIf="user">
-          <i></i> {{ user.name }}
-          <button mat-button (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-        </li>
-        <li class="nav-item" *ngIf="!user">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <li class="nav-item" *ngIf="!user">
-          <a class="nav-link" routerLink="/register">Sign in</a>
-        </li>
-      </ul>
-      
-    </div>
-  </nav>
-  
+      </div>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/games">Games</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/news">News</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav right-align">
+      <li class="nav-item" *ngIf="user">
+        <i></i> {{ user.name }}
+        <button mat-button (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a class="nav-link" routerLink="/register">Sign in</a>
+      </li>
+    </ul>
+  </div>
+</nav>
