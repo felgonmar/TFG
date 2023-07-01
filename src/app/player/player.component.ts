@@ -26,7 +26,9 @@ export class PlayerComponent implements OnInit {
     private ratingService:RatingService,
     private playersService: PlayersService, 
     public dialog: MatDialog){
-      this.user=this.userService.get_user()
+          this.userService.user$.subscribe(user => {
+      this.user = user;
+    });
     }
     
   ngOnInit(): void {

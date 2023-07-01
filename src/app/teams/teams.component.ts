@@ -16,7 +16,9 @@ export class TeamsComponent implements OnInit {
   ratingsMap: { [teamId: number]: number | string } = {};
   userRatingMap:any = {};
   constructor(private teamsService: TeamsService, private ratingService:RatingService, private userService:UserService, public dialog: MatDialog) {
-    this.user=this.userService.get_user()
+        this.userService.user$.subscribe(user => {
+      this.user = user;
+    });
 
 }
 

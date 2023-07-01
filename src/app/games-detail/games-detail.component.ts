@@ -22,7 +22,9 @@ export class GamesDetailComponent {
     private route: ActivatedRoute, public dialog: MatDialog,    
     private userService:UserService,
     private ratingService:RatingService,){
-      this.user=this.userService.get_user()
+    this.userService.user$.subscribe(user => {
+      this.user = user;
+    });
     }
 
   ngOnInit(): void {

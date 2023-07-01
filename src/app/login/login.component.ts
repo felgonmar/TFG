@@ -16,7 +16,6 @@ export class LoginComponent {
   login(): void {
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const passwordInput = document.getElementById("password") as HTMLInputElement;
-    this.snackBar.open('vamono', 'Cerrar', {duration: 3000})
     const email = emailInput.value;
     const password = passwordInput.value;
   
