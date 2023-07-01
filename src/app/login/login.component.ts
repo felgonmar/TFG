@@ -25,11 +25,11 @@ export class LoginComponent {
         this.router.navigate(['/teams']);  
         
       }else{
-        this.snackBar.open('Credenciales invalidas.', 'Cerrar', {duration: 3000});
+        this.snackBar.open('Invalid credentials.', 'Cerrar', {duration: 3000});
 
       }
     },error=>{
-      this.snackBar.open('Ha ocurrido un error durante el inicio de sesión.', 'Cerrar', {duration: 3000});
+      this.snackBar.open('Invalid credentials.', 'Cerrar', {duration: 3000});
 
     })
   
