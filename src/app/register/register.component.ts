@@ -46,7 +46,7 @@ export class RegisterComponent {
   }
   
   validatePasswordsMatch(password: string, confirmPassword: string): boolean {
-    return password === confirmPassword;
+    return password === confirmPassword && password !== '';
   }
 
 }
