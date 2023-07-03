@@ -13,7 +13,7 @@
   <li *ngFor="let team of teams">
     <a [routerLink]="['/teams', team.id, 'players']">{{ team.full_name }} </a> - all rating: {{  ratingsMap[team.id] }}  - YOUR RATE: {{userRatingMap[team.id].rating}} - comment: {{userRatingMap[team.id].comment}}
     <br>
-    <button class="score-button" (click)="openDialog('team',team.id)">Rate Team</button>
+    <button class="score-button" (click)="openDialog('team',team.id, team.full_name)">Rate Team</button>
   </li>
 </ul>  
 

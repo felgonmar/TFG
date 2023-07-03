@@ -76,10 +76,10 @@ export class TeamsComponent implements OnInit {
   }
 
 
-  openDialog(type: string, id: number): void {
+  openDialog(type: string, id: number, name:string): void {
     const dialogRef = this.dialog.open(RatingDialogComponent, {
       width: '250px',
-      data: {type: type, id: id},
+      data: {type: type, id: id, name:name},
       hasBackdrop: true,
     });
   

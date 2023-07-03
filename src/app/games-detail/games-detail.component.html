@@ -17,7 +17,7 @@
     </div>
     <div class="rating-section">
         <div *ngIf="user">
-            <button class="score-button" (click)="openDialog('game',gameId)">Rate Game</button>
+            <button class="score-button" (click)="openDialog('game',gameId,boxScore['TeamStats'][0]['TEAM_ABBREVIATION'], boxScore['TeamStats'][1]['TEAM_ABBREVIATION'] )">Rate Game</button>
         </div>
         <div>
             <h2>Total Rating</h2>

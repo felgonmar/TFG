@@ -57,10 +57,11 @@ export class GamesDetailComponent {
       console.log('no rated yet')
     }
     }
-    openDialog(type: string, id: number): void {
+    openDialog(type: string, id: number, team1:string, team2:string): void {
+      let name = team1+ ' vs ' +team2 
       const dialogRef = this.dialog.open(RatingDialogComponent, {
         width: '250px',
-        data: {type: type, id: id},
+        data: {type: type, id: id, name: name},
         hasBackdrop: true,
       });
     
