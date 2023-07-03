@@ -15,7 +15,7 @@ export class GamesDetailComponent {
   boxScore:any;
   playByPlay:any;
   gameId?: any;
-  userRating:any= {'rating':'No rated yet', 'comment':''}
+  userRating:any= {'rating':'Not rated yet', 'comment':''}
   totalRating:any
   user:any;
   constructor(private gameService: GamesService, 

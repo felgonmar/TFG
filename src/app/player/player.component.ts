@@ -17,7 +17,7 @@ export class PlayerComponent implements OnInit {
   stats:any;
   currentSeason: any;
   user:any;
-  userRating:any= {'rating':'No rated yet', 'comment':''}
+  userRating:any= {'rating':'Not rated yet', 'comment':''}
   totalRating:any
   advancedData:any;
   loaded = false;

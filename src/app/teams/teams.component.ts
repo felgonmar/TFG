@@ -57,11 +57,11 @@ export class TeamsComponent implements OnInit {
     try {
     console.log(this.user.id)
     const response = await this.ratingService.getUserRating('team',id.toString(),this.user.id.toString()).toPromise()
-    console.log(response)
+    console.log('REsponse: ',response)
     return response
   } catch(error){
     console.log(error)
-    return {'rating':'No rated yet',
+    return {'rating':'Not rated yet',
           'comment': ''};
   }
   }
@@ -71,7 +71,7 @@ export class TeamsComponent implements OnInit {
       const response = await this.ratingService.getRatings('team', id.toString()).toPromise();
       return response.total;
     } catch (error) {
-      return 'No rated yet';
+      return 'Not rated yet';
     }
   }
 
